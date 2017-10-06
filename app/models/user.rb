@@ -15,6 +15,9 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  name                   :string
+#  description            :text
+#  hobbies                :text
 #
 
 class User < ApplicationRecord

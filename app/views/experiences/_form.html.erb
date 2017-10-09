@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :company %>
-    <%= form.text_field :company, id: :experience_company %>
+    <%= form.text_field :company, id: :experience_company, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :from %>
-    <%= form.text_field :from, id: :experience_from %>
+    <%= form.text_field :from, id: :experience_from, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :to %>
-    <%= form.text_field :to, id: :experience_to %>
+    <%= form.text_field :to, id: :experience_to, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :role %>
-    <%= form.text_area :role, id: :experience_role %>
+    <%= form.text_area :role, id: :experience_role, class: 'form-control' %>
   </div>
 
   <div class="actions">

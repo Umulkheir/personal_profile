@@ -21,6 +21,7 @@
 			<div class="col-md-4 w3-about-top">
 				<%= image_tag ("umu.png"), class: "img-responsive"%>
 			</div>
+			<span><%= image_tag('um.gif', style: 'border: 0px; width: 80px;') %></span>
 			<div class="col-md-8 w3l-about">
 					<div class="w3ls-heading">
 						<h2>I'm a web designer / developer based in Nairobi, Kenya. I have a passion for web design and love to create for web and mobile devices.</h2>
@@ -124,19 +125,37 @@
 		<div class="container">	
 			<h3 class="w3l-heading">Education</h3>
 			<% Education.all.each_with_index do |education, index| %>
-				<div class="work-info"> 
-					<div class="col-md-6 col-sm-6 col-xs-6 work-right work-right2"> 
-					</div>
-					<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2"> 
-						<div class="col-md-6  col-sm-6 col-xs-6  work1">
-							<h4><%=education.institution%></h4>
-							<p>Umulkheir is too lazy to type things so she doesnt type at all. She is also really bad with time. She is also very fun to be with laudantium.</p></div>
-						<div class="col-md-6  col-sm-6 col-xs-6  work2">
-							<h5><%=education.institution_type%></h5>
-							<span></span>
+				<% if index == 0 || index % 2 == 0 %>
+					<div class="work-info"> 
+						<div class="col-md-6 col-sm-6 col-xs-6 work-right work-right2"> 
+						</div>
+						<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2"> 
+							<div class="col-md-6  col-sm-6 col-xs-6  work1">
+								<h4><%=education.institution%></h4>
+								<p>Umulkheir is too lazy to type things so she doesnt type at all. She is also really bad with time. She is also very fun to be with. S2</p></div>
+							<div class="col-md-6  col-sm-6 col-xs-6  work2">
+								<h5><%=education.institution_type%></h5>
+								<span></span>
+							</div>
 						</div>
 					</div>
-				</div>
+				<% else %>
+					<div class="work-info"> 
+						<div class="col-md-6  col-sm-6 col-xs-6"> 
+						</div>
+						<div class="col-md-6  col-sm-6 col-xs-6  work-right"> 
+							<div class="col-md-6  col-sm-6 col-xs-6 work2">
+								<span></span>
+								<h5><%=education.institution_type%></h5>
+							</div>	
+							<div class="col-md-6  col-sm-6 col-xs-6  work-right1">
+								<h4><%=education.institution%></h4>
+								<p>Umulkheir is too lazy to type things so she doesnt type at all. She is also really bad with time. She is also very fun to be with. S2</p>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
@@ -147,23 +166,40 @@
 <!-- work-experience-->
 	<div id="exp" class="agile-edu exp">
 		<div class="container">	
-				<h3 class="w3l-heading">Experience</h3>
-			<% Experience.all.each do |experience| %>
-				<div class="work-info"> 
-					<div class="col-md-6  col-sm-6 col-xs-6  work-right work-right2"> 
-					</div>
-					<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2"> 
-						<div class="col-md-6  col-sm-6 col-xs-6  work1">
-							<h4><%=experience.from%> - <%=experience.to%></h4>
-							<p><%=experience.role%></p></div>
-						<div class="col-md-6  col-sm-6 col-xs-6 work2">
-							<h5> <%=experience.company%></h5>
-							<span></span>
+			<h3 class="w3l-heading">Experience</h3>
+			<% Experience.all.each_with_index do |experience, index| %>
+				<% if index == 0 || index % 2 == 0 %>
+					<div class="work-info"> 
+						<div class="col-md-6 col-sm-6 col-xs-6 work-right work-right2"> 
+						</div>
+						<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2"> 
+							<div class="col-md-6  col-sm-6 col-xs-6  work1">
+								<h4><%=experience.from%> - <%=experience.to%></h4>
+								<p><%=experience.role%></p></div>
+							<div class="col-md-6  col-sm-6 col-xs-6  work2">
+								<h5> <%=experience.company%></h5>
+								<span></span>
+							</div>
 						</div>
 					</div>
-				</div>
-			<% end %>
-			
+				<% else %>
+					<div class="work-info"> 
+						<div class="col-md-6  col-sm-6 col-xs-6"> 
+						</div>
+						<div class="col-md-6  col-sm-6 col-xs-6  work-right"> 
+							<div class="col-md-6  col-sm-6 col-xs-6 work2">
+								<span></span>
+								<h5> <%=experience.company%></h5>
+							</div>	
+							<div class="col-md-6  col-sm-6 col-xs-6  work-right1">
+								<h4><%=experience.from%> - <%=experience.to%></h4>
+								<p><%=experience.role%></p></div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<% end %>
+			<% end %>			
 			<span class="edu-circle"></span>
 		</div>
 	</div>

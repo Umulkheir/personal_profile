@@ -28,12 +28,16 @@
 
   <div class="form-group">
     <%= form.label :institution_type %>
-    <%= form.text_field :institution_type, id: :education_institution_type ,class: 'form-control' %>
+    <select class='form-control' name='education[institution_type]'>
+      <option>Select institution type</option>
+      <option>High School</option>
+      <option>University</option>
+    </select>
   </div>
 
   <div class="form-group">
     <%= form.label :course %>
-    <%= form.text_field :course, id: :education_course %>
+    <%= form.text_field :course, id: :education_course, class: 'form-control'%>
   </div>
 
   <div class="actions">
